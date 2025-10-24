@@ -743,7 +743,7 @@ class DataFrame(NDFrame, OpsMixin):
 
         # GH47215
         if isinstance(index, set):
-            raise ValueError("index cannot be a set")
+            index = list(index)
         if isinstance(columns, set):
             raise ValueError("columns cannot be a set")
 
